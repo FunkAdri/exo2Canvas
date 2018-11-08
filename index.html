@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <title>Canvas 2 : Le retour</title>
+  </head>
+  <body>
+    <canvas id="canvas1" width="400" height="400">
+  Je suis Oui, alors Oui le Oui du mois suivant.
+</canvas>
+<canvas id="canvas2" width="400" height="400"></canvas>
+
+<script type="text/javascript">
+  var c = document.getElementById("canvas1");
+  var ctx1 = c.getContext("2d");
+// Toit
+ctx1.beginPath(); // Début du chemin
+ctx1.rotate(45 * Math.PI / 180); // On rotationne (mdr) le carré
+ctx1.rect(250,-185,75,75); // On fait le rectangle
+ctx1.setTransform(1, 0, 0, 1, 0, 0); // Remet en place ce qui reste en dessous et qu'on ne doit pas bouger
+ctx1.fillStyle = "#ce8539"; // Selection de la couleur du remplissage
+ctx1.strokeStyle = "#ce8539"; // Selection de la couleur des contours
+ctx1.fill(); // On remplie
+ctx1.stroke(); // On met des contours
+</script>
+
+<script type="text/javascript">
+ var canvas = document.getElementById("canvas2");
+ var ctx2 = c.getContext("2d");
+// Mur
+ctx2.beginPath(); // Début du chemin
+ctx2.moveTo(253,100); // Puis on saute jusqu'à 120,100
+ctx2.lineTo(363,100); // Puis on trace jusqu'à 230,100
+ctx2.lineTo(363,190); // Puis on trace jusqu'à 230,190
+ctx2.lineTo(253,190); // Puis on trace jusqu'à 120,190
+ctx2.lineTo(253,100); // Puis on trace jusqu'à 120,100
+ctx2.closePath(); // Fermeture du chemin
+ctx2.fillStyle = "#a9d7e6";
+ctx2.strokeStyle = "#a9d7e6";
+ctx2.fill();
+ctx2.stroke();
+// Porte
+ctx2.beginPath();
+ctx2.moveTo(290,190);
+ctx2.lineTo(320,190);
+ctx2.lineTo(320,140);
+ctx2.lineTo(290,140);
+ctx2.lineTo(290,190);
+ctx2.closePath();
+ctx2.fillStyle = "#c9c9c9";
+ctx2.strokeStyle = "#c9c9c9";
+ctx2.fill();
+ctx2.stroke();
+// Fenêtres
+ctx2.beginPath();
+ctx2.moveTo(260,110);
+ctx2.lineTo(280,110);
+ctx2.lineTo(280,130);
+ctx2.lineTo(260,130);
+ctx2.lineTo(260,110);
+ctx2.moveTo(335,110);
+ctx2.lineTo(355,110);
+ctx2.lineTo(355,130);
+ctx2.lineTo(335,130);
+ctx2.lineTo(335,110);
+ctx2.closePath();
+ctx2.fillStyle = "#c9c9c9";
+ctx2.strokeStyle = "#c9c9c9";
+ctx2.fill();
+ctx2.stroke();
+</script>
+  </body>
+</html>
